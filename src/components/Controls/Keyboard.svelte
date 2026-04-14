@@ -27,7 +27,7 @@
 				value: num
 			});
 
-			// 清除候选（可选）
+			// 清除候选
 			if ($candidates.hasOwnProperty($cursor.x + ',' + $cursor.y)) {
 				candidates.clear($cursor);
 			}
@@ -89,7 +89,7 @@
 	{#each Array(10) as _, keyNum}
 		{#if keyNum === 9}
 			<button class="btn btn-key" disabled={$keyboardDisabled} on:click={() => handleKeyButton(0)}>
-				🧹
+				
 			</button>
 		{:else}
 			<button class="btn btn-key" disabled={$keyboardDisabled} on:click={() => handleKeyButton(keyNum + 1)}>

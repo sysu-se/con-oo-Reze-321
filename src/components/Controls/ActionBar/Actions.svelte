@@ -7,10 +7,7 @@
 	import { keyboardDisabled } from '@sudoku/stores/keyboard';
 	import { gamePaused } from '@sudoku/stores/game';
 
-	// ❌ 删除旧的 userGrid
-	// import { userGrid } from '@sudoku/stores/grid';
 
-	// ✅ 引入你的 store
 	import { myGame as game } from '../../../stores/myGameStore';
 
 	$: hintsAvailable = $hints > 0;
@@ -21,8 +18,7 @@
 				candidates.clear($cursor);
 			}
 
-			// ❗这里原来是 userGrid.applyHint（我们先不支持 hint）
-			// 👉 作业不要求，可以先简单处理：
+
 			game.guess({
 				row: $cursor.y,
 				col: $cursor.x,
@@ -41,7 +37,7 @@
 		title="Undo"
 		on:click={() => game.undo()}
 	>
-		↩️
+		
 	</button>
 
 	<!-- ✅ Redo -->
@@ -61,7 +57,7 @@
 		on:click={handleHint}
 		title="Hints ({$hints})"
 	>
-		💡
+		
 		{#if $settings.hintsLimited}
 			<span class="badge" class:badge-primary={hintsAvailable}>{$hints}</span>
 		{/if}
@@ -73,7 +69,7 @@
 		on:click={notes.toggle}
 		title="Notes ({$notes ? 'ON' : 'OFF'})"
 	>
-		✏️
+		
 		<span class="badge tracking-tighter" class:badge-primary={$notes}>
 			{$notes ? 'ON' : 'OFF'}
 		</span>

@@ -1,7 +1,6 @@
 import { writable } from 'svelte/store'
 import { createGame, createSudoku } from '../domain'
 
-// 你可以先写死一个初始盘面（后面再优化）
 const defaultGrid = [
   [0,0,0, 2,6,0, 7,0,1],
   [6,8,0, 0,7,0, 0,9,0],

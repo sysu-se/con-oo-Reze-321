@@ -30,7 +30,7 @@
 
 <div class="action-buttons space-x-3">
 
-	<!-- ✅ Undo -->
+	<!-- Undo -->
 	<button
 		class="btn btn-round"
 		disabled={$gamePaused}
@@ -40,17 +40,16 @@
 		
 	</button>
 
-	<!-- ✅ Redo -->
+	<!-- Redo -->
 	<button
 		class="btn btn-round"
 		disabled={$gamePaused}
 		title="Redo"
 		on:click={() => game.redo()}
 	>
-		↪️
 	</button>
 
-	<!-- Hint（可以保留简单版） -->
+	<!-- Hint -->
 	<button
 		class="btn btn-round btn-badge"
 		disabled={$keyboardDisabled || !hintsAvailable}
